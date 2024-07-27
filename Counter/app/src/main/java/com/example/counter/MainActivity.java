@@ -7,8 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    int count =0;
+    TextView tvHasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,23 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+
         });
+        load();
+    }
+
+    public void load(){
+        tvHasil =  findViewById(R.id.tvHasil);
+    }
+
+    public void btnUP(View view){
+    count++;
+        tvHasil.setText(count+"");
+    }
+
+    public void btnDown(View view){
+    count--;
+        tvHasil.setText(count+"");
     }
 }
