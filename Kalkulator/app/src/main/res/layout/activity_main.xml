@@ -62,6 +62,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#FFC107"
+        android:onClick="btnKurang"
         android:text="PENGURANGAN" />
 
     <Button
@@ -72,6 +73,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#08C810"
+        android:onClick="btnKali"
         android:text="PERKALIAN" />
 
     <Button
@@ -82,6 +84,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#03A9F4"
+        android:onClick="btnBagi"
         android:text="PEMBAGIAN" />
 
 </LinearLayout>
