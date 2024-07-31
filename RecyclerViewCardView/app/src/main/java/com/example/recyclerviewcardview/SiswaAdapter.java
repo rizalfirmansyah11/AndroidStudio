@@ -1,7 +1,6 @@
 package com.example.recyclerviewcardview;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewBolder> {
+public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder> {
 
     private Context context;
     private List<Siswa> siswalist;
@@ -23,17 +22,19 @@ public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewBolder> 
 
     @NonNull
     @Override
-    public ViewBolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        ViewGroup ViewGroup = null;
-        View v = LayoutInflater.from(ViewGroup.getContext()).inflate(R.layout.item_siswa, ViewGroup,false);
-        return new ViewBolder(v);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+//        ViewGroup ViewGroup = null;
+//        View v = LayoutInflater.from(ViewGroup.getContext()).inflate(R.layout.item_siswa, ViewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_siswa, viewGroup,false);
+        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewBolder Bolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Siswa siswa = siswalist.get(i);
-       ViewBolder.tvNama.setText(siswa.getNama());
-       ViewBolder.tvAlamat.setText(siswa.getAlamat());
+      viewHolder.tvNama.setText(siswa.getNama());
+       viewHolder.tvAlamat.setText(siswa.getAlamat());
+
     }
 
     @Override
@@ -41,12 +42,12 @@ public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewBolder> 
         return siswalist.size();
     }
 
-    public static class ViewBolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
-       static TextView tvNama;
-       static TextView tvAlamat;
+       TextView tvNama;
+       TextView tvAlamat;
 
-        public ViewBolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvNama = itemView.findViewById(R.id.tvNama);
