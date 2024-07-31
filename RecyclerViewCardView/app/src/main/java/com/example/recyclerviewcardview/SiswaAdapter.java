@@ -70,6 +70,7 @@ public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder> 
                             Toast.makeText(context, siswa.getNama()+"sudah dihapus ya", Toast.LENGTH_SHORT).show();
                         }
 
+
                         
                         return false;
                     }
