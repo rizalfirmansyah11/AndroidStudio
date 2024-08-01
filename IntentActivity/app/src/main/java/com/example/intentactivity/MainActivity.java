@@ -29,13 +29,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void load(){
+    public void load() {
         etBarang = findViewById(R.id.etBarang);
     }
 
     public void btnBarang(View view) {
         String barang = etBarang.getText().toString();
         Intent intent = new Intent(this, Barang.class);
+        intent.putExtra("ISI", barang);
+        startActivity(intent);
+    }
+
+    public void btnPenjualan(View view) {
+        String barang = etBarang.getText().toString();
+        Intent intent = new Intent(this, Penjualan.class);
+        intent.putExtra("ISI", barang);
+        startActivity(intent);
+    }
+
+    public void btnPembelian(View view) {
+        String barang = etBarang.getText().toString();
+        Intent intent = new Intent(this, Pembelian.class);
         intent.putExtra("ISI", barang);
         startActivity(intent);
     }
