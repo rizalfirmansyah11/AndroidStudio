@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
         load();
     }
 
-    public void load(){
+    public void load() {
         etBarang = findViewById(R.id.etBarang);
         etStok = findViewById(R.id.etStok);
         sharedPreferences = getSharedPreferences("barang", MODE_PRIVATE);
     }
 
-    public void isiSHaredPreferences(String barang, Float stok){
+    public void isiSHaredPreferences(String barang, Float stok) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString("barang", barang);
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         String barang = etBarang.getText().toString();
         float stok = Float.parseFloat(etStok.getText().toString());
 
-        if (barang.isEmpty() || stok == 0.0){
+        if (barang.isEmpty() || stok == 0.0) {
             Toast.makeText(this, "Data Kosong", Toast.LENGTH_SHORT).show();
-        }else{
-            isiSHaredPreferences(barang,stok);
+        } else {
+            isiSHaredPreferences(barang, stok);
             Toast.makeText(this, "Data Sudah di simpan ", Toast.LENGTH_SHORT).show();
         }
         etBarang.setText("");
@@ -61,5 +61,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tampil(View view) {
+
+        String barang = sharedPreferences.getString("barang", "");
+        float stok = sharedPreferences.getFloat("stok", 0);
+
+        etBarang.setText(barang);
+        etStok.setText(stok+"");
     }
 }
