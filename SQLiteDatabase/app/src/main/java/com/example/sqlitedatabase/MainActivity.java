@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void deleteData(String id) {
          idbarang = id;
-        
+
 
         AlertDialog.Builder al= new AlertDialog.Builder(this);
         al.setTitle("PERINGATAN !");
